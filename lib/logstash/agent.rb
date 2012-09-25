@@ -485,6 +485,9 @@ class LogStash::Agent
     shutdown_plugins(@plugins)
     # When we get here, all inputs have finished, all messages are done
     @logger.info("Shutdown complete")
+    # adding exit, as it was removed in 1f991c7417cab62252b1982767ef73af25f89fdc
+    # TODO look into this
+    exit(0)
   end # def shutdown
 
   def shutdown_plugins(plugins)
